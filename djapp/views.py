@@ -107,6 +107,14 @@ def showPost(request, p_id):
             if form.is_valid():
                 # if valid set the comment data in comment table
                 comment = Comment(User_id= request.user,Text=form.cleaned_data['Text'],Post_id=post)
+                comments = str(comment)
+                comments = comments.split(" ")
+                censor = Word.objects.all()
+                censors = str(censor)
+                for i,word in enumerate(comments):
+                    if word in censors:
+                        comments[i] = '*****'     
+                comment.Text = " ".join(comments)
                 # and save the data in db
                 comment.save()
                 # back to post page
