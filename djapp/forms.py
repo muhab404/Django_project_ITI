@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 
+#mounir & mostafa & yostos
+
 class UserForm(UserCreationForm):
     class Meta:
         # is_staff = forms.BooleanField(required=True, initial=True)
@@ -11,6 +13,7 @@ class UserForm(UserCreationForm):
         fields = ('username', 'email', 'password1','password2','is_staff')
 
 
+#mounir & mostafa & yostos
 class UForm(UserCreationForm):
     class Meta:
         model = User
@@ -23,7 +26,7 @@ class UForm(UserCreationForm):
             'is_superuser':forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             'is_staff' : forms.CheckboxInput(attrs={'class': 'form-check-input'})
         }
-
+#mounir & mostafa & yostos
 class PForm(forms.ModelForm):
     Post_category = forms.ModelChoiceField(
         queryset= Category.objects.all(),
@@ -76,6 +79,7 @@ class PForm(forms.ModelForm):
             ),
         }
 
+#muhab
 class CommentForm(forms.ModelForm):
     class Meta:
         model=Comment
@@ -84,11 +88,12 @@ class CommentForm(forms.ModelForm):
         def __str__(self):
             return f"{self.Text} by {self.User_id}"
 
+#muhab
 class BadWordsForm(forms.ModelForm):
     class Meta:
         model = Word
         fields = ('Name',)
-
+#noura
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
