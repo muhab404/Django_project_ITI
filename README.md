@@ -62,6 +62,7 @@
 
 ### Noura Mansour
 [Github](https://github.com/NouraMansour)
+[Linked in] (https://www.linkedin.com/in/noura-mansour-74bb89236) 
 
 
 ### Yostos Boules
